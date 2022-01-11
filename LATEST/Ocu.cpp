@@ -2,6 +2,6 @@
 
 class_Ocu Ocu;
 
-void class_Ocu::InitFunction(void){
+FUNC(void, OCU_CODE) class_Ocu::InitFunction(void){
 }
 

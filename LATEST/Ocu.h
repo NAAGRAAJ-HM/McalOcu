@@ -4,7 +4,7 @@
 
 class class_Ocu{
    public:
-      void InitFunction(void);
+      FUNC(void, OCU_CODE) InitFunction(void);
 };
 
 extern class_Ocu Ocu;
