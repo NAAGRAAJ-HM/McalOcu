@@ -1,14 +1,15 @@
 #pragma once
 /*****************************************************/
-/* File   : Ocu.h                                    */
+/* File   : Ocu_EcuM.h                               */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
 /*****************************************************/
 /* #INCLUDES                                         */
 /*****************************************************/
-#include "Std_Types.h"
 #include "Compiler_Cfg_Ocu.h"
+
+#include "EcuM_Client.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -21,21 +22,13 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class class_Ocu{
+class class_Ocu_EcuM : public class_EcuM_Client{
    public:
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, OCU_CODE) StartChannel         (void);
-      FUNC(void, OCU_CODE) StopChannel          (void);
-      FUNC(void, OCU_CODE) SetPinState          (void);
-      FUNC(void, OCU_CODE) SetPinAction         (void);
-      FUNC(void, OCU_CODE) GetCounter           (void);
-      FUNC(void, OCU_CODE) SetAbsoluteThreshold (void);
-      FUNC(void, OCU_CODE) SetRelativeThreshold (void);
-      FUNC(void, OCU_CODE) DisableNotification  (void);
-      FUNC(void, OCU_CODE) EnableNotification   (void);
-      FUNC(void, OCU_CODE) GetVersionInfo       (void);
+      FUNC(void, OCU_CODE) InitFunction   (void);
+      FUNC(void, OCU_CODE) DeInitFunction (void);
 };
 
 /*****************************************************/
@@ -49,7 +42,7 @@ class class_Ocu{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern class_Ocu Ocu;
+extern class_Ocu_EcuM *Ocu_EcuM_ptr;
 
 /*****************************************************/
 /* EOF                                               */

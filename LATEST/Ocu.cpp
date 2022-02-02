@@ -8,6 +8,8 @@
 /*****************************************************/
 #include "Ocu.h"
 
+#include "Ocu_EcuM.h"
+
 /*****************************************************/
 /* #DEFINES                                          */
 /*****************************************************/
@@ -32,14 +34,16 @@
 /* OBJECTS                                           */
 /*****************************************************/
 class_Ocu Ocu;
+class_Ocu_EcuM Ocu_EcuM;
+class_Ocu_EcuM *Ocu_EcuM_ptr = &Ocu_EcuM;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-FUNC(void, OCU_CODE) class_Ocu::InitFunction(void){
+FUNC(void, OCU_CODE) class_Ocu_EcuM::InitFunction(void){
 }
 
-FUNC(void, OCU_CODE) class_Ocu::DeInitFunction(void){
+FUNC(void, OCU_CODE) class_Ocu_EcuM::DeInitFunction(void){
 }
 
 FUNC(void, OCU_CODE) class_Ocu::StartChannel(void){
