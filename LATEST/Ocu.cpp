@@ -33,9 +33,9 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-class_Ocu Ocu;
 class_Ocu_EcuM Ocu_EcuM;
-class_Ocu_EcuM *Ocu_EcuM_ptr = &Ocu_EcuM;
+class_EcuM_Client *EcuM_Client_ptr_Ocu = &Ocu_EcuM;
+class_Ocu Ocu;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
