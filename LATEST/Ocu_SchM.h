@@ -1,14 +1,15 @@
 #pragma once
 /*****************************************************/
-/* File   : Ocu.h                                    */
+/* File   : Ocu_SchM.h                               */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
 /*****************************************************/
 /* #INCLUDES                                         */
 /*****************************************************/
-#include "Std_Types.h"
 #include "Compiler_Cfg_Ocu.h"
+
+#include "SchM_Client.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -21,21 +22,12 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class class_Ocu{
+class interface_Ocu_SchM : public interface_SchM_Client{
    public:
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, OCU_CODE) StartChannel         (void);
-      FUNC(void, OCU_CODE) StopChannel          (void);
-      FUNC(void, OCU_CODE) SetPinState          (void);
-      FUNC(void, OCU_CODE) SetPinAction         (void);
-      FUNC(void, OCU_CODE) GetCounter           (void);
-      FUNC(void, OCU_CODE) SetAbsoluteThreshold (void);
-      FUNC(void, OCU_CODE) SetRelativeThreshold (void);
-      FUNC(void, OCU_CODE) DisableNotification  (void);
-      FUNC(void, OCU_CODE) EnableNotification   (void);
-      FUNC(void, OCU_CODE) GetVersionInfo       (void);
+      FUNC(void, OCU_CODE) MainFunction(void);
 };
 
 /*****************************************************/
@@ -49,7 +41,7 @@ class class_Ocu{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern class_Ocu Ocu;
+extern interface_Ocu_SchM *SchM_Client_ptr_Ocu;
 
 /*****************************************************/
 /* EOF                                               */

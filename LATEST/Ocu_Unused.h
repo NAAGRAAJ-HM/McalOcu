@@ -1,15 +1,14 @@
 #pragma once
 /*****************************************************/
-/* File   : Ocu_EcuM.h                               */
+/* File   : Ocu_Unused.h                             */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
 /*****************************************************/
 /* #INCLUDES                                         */
 /*****************************************************/
+#include "Std_Types.h"
 #include "Compiler_Cfg_Ocu.h"
-
-#include "EcuM_Client.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -22,13 +21,21 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class interface_Ocu_EcuM : public interface_EcuM_Client{
+class class_Ocu_Unused{
    public:
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, OCU_CODE) InitFunction   (void);
-      FUNC(void, OCU_CODE) DeInitFunction (void);
+      FUNC(void, OCU_CODE) StartChannel         (void);
+      FUNC(void, OCU_CODE) StopChannel          (void);
+      FUNC(void, OCU_CODE) SetPinState          (void);
+      FUNC(void, OCU_CODE) SetPinAction         (void);
+      FUNC(void, OCU_CODE) GetCounter           (void);
+      FUNC(void, OCU_CODE) SetAbsoluteThreshold (void);
+      FUNC(void, OCU_CODE) SetRelativeThreshold (void);
+      FUNC(void, OCU_CODE) DisableNotification  (void);
+      FUNC(void, OCU_CODE) EnableNotification   (void);
+      FUNC(void, OCU_CODE) GetVersionInfo       (void);
 };
 
 /*****************************************************/
@@ -42,7 +49,7 @@ class interface_Ocu_EcuM : public interface_EcuM_Client{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern interface_Ocu_EcuM *EcuM_Client_ptr_Ocu;
+//extern class_Ocu Ocu;
 
 /*****************************************************/
 /* EOF                                               */
