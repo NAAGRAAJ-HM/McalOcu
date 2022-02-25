@@ -27,8 +27,8 @@ class interface_Ocu_EcuM : public interface_EcuM_Client{
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, OCU_CODE) InitFunction   (void);
-      FUNC(void, OCU_CODE) DeInitFunction (void);
+      virtual FUNC(void, OCU_CODE) InitFunction   (void) = 0;
+      virtual FUNC(void, OCU_CODE) DeInitFunction (void) = 0;
 };
 
 /*****************************************************/
