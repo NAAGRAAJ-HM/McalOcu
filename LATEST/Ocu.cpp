@@ -24,8 +24,6 @@
 /*****************************************************/
 class module_Ocu:
       public abstract_module
-   ,  public interface_Ocu_EcuM
-   ,  public interface_Ocu_SchM
 {
    public:
       FUNC(void, OCU_CODE) InitFunction   (void);
@@ -44,10 +42,9 @@ class module_Ocu:
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-module_Ocu Ocu;
-
-interface_Ocu_EcuM *EcuM_Client_ptr_Ocu = &Ocu;
-interface_Ocu_SchM *SchM_Client_ptr_Ocu = &Ocu;
+module_Ocu     Ocu;
+infEcuMClient* gptrinfEcuMClient_Ocu = &Ocu;
+infSchMClient* gptrinfSchMClient_Ocu = &Ocu;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
