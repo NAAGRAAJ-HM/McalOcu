@@ -32,7 +32,7 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern interface_Ocu_SchM *SchM_Client_ptr_Ocu;
+extern infSchMClient *gptrinfSchMClient_Ocu;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
