@@ -7,8 +7,8 @@
 /* #INCLUDES                                         */
 /*****************************************************/
 #include "module.h"
-#include "Ocu_EcuM.h"
-#include "Ocu_SchM.h"
+#include "infOcu_EcuM.h"
+#include "infOcu_SchM.h"
 #include "Ocu_Unused.h"
 
 /*****************************************************/
@@ -28,6 +28,7 @@ class module_Ocu:
    public:
       FUNC(void, OCU_CODE) InitFunction   (void);
       FUNC(void, OCU_CODE) DeInitFunction (void);
+      FUNC(void, OCU_CODE) GetVersionInfo (void);
       FUNC(void, OCU_CODE) MainFunction   (void);
 };
 
@@ -44,6 +45,7 @@ class module_Ocu:
 /*****************************************************/
 module_Ocu     Ocu;
 infEcuMClient* gptrinfEcuMClient_Ocu = &Ocu;
+infDcmClient*  gptrinfDcmClient_Ocu  = &Ocu;
 infSchMClient* gptrinfSchMClient_Ocu = &Ocu;
 
 /*****************************************************/
@@ -53,6 +55,9 @@ FUNC(void, OCU_CODE) module_Ocu::InitFunction(void){
 }
 
 FUNC(void, OCU_CODE) module_Ocu::DeInitFunction(void){
+}
+
+FUNC(void, OCU_CODE) module_Ocu::GetVersionInfo(void){
 }
 
 FUNC(void, OCU_CODE) module_Ocu::MainFunction(void){
