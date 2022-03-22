@@ -7,7 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.h"
-#include "infOcu_Version.h"
+#include "Ocu_Cfg.h"
 #include "infOcu_EcuM.h"
 #include "infOcu_Dcm.h"
 #include "infOcu_SchM.h"
@@ -15,10 +15,19 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
+#define OCU_AR_RELEASE_MAJOR_VERSION                                           4
+#define OCU_AR_RELEASE_MINOR_VERSION                                           3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
+#if(OCU_AR_RELEASE_MAJOR_VERSION != STD_AR_RELEASE_MAJOR_VERSION)
+   #error "Incompatible OCU_AR_RELEASE_MAJOR_VERSION!"
+#endif
+
+#if(OCU_AR_RELEASE_MINOR_VERSION != STD_AR_RELEASE_MINOR_VERSION)
+   #error "Incompatible OCU_AR_RELEASE_MINOR_VERSION!"
+#endif
 
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
@@ -61,6 +70,11 @@ FUNC(void, OCU_CODE) module_Ocu::DeInitFunction(void){
 }
 
 FUNC(void, OCU_CODE) module_Ocu::GetVersionInfo(void){
+#if(STD_ON == Ocu_DevErrorDetect)
+//TBD: API parameter check
+   Det_ReportError(
+   );
+#endif
 }
 
 FUNC(void, OCU_CODE) module_Ocu::MainFunction(void){
