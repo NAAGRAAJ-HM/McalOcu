@@ -7,7 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.h"
-#include "Ocu_Cfg.h"
+#include "CfgOcu.h"
 #include "infOcu_EcuM.h"
 #include "infOcu_Dcm.h"
 #include "infOcu_SchM.h"
