@@ -6,11 +6,11 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "module.h"
-#include "CfgOcu.h"
-#include "infOcu_EcuM.h"
-#include "infOcu_Dcm.h"
-#include "infOcu_SchM.h"
+#include "module.hpp"
+#include "CfgOcu.hpp"
+#include "infOcu_EcuM.hpp"
+#include "infOcu_Dcm.hpp"
+#include "infOcu_SchM.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -90,7 +90,7 @@ FUNC(void, OCU_CODE) module_Ocu::GetVersionInfo(void){
 FUNC(void, OCU_CODE) module_Ocu::MainFunction(void){
 }
 
-#include "Ocu_Unused.h"
+#include "Ocu_Unused.hpp"
 
 FUNC(void, OCU_CODE) class_Ocu_Unused::StartChannel(void){
 }
