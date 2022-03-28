@@ -90,7 +90,18 @@ FUNC(void, OCU_CODE) module_Ocu::GetVersionInfo(void){
 FUNC(void, OCU_CODE) module_Ocu::MainFunction(void){
 }
 
-#include "Ocu_Unused.hpp"
+class class_Ocu_Unused{
+   public:
+      FUNC(void, OCU_CODE) StartChannel         (void);
+      FUNC(void, OCU_CODE) StopChannel          (void);
+      FUNC(void, OCU_CODE) SetPinState          (void);
+      FUNC(void, OCU_CODE) SetPinAction         (void);
+      FUNC(void, OCU_CODE) GetCounter           (void);
+      FUNC(void, OCU_CODE) SetAbsoluteThreshold (void);
+      FUNC(void, OCU_CODE) SetRelativeThreshold (void);
+      FUNC(void, OCU_CODE) DisableNotification  (void);
+      FUNC(void, OCU_CODE) EnableNotification   (void);
+};
 
 FUNC(void, OCU_CODE) class_Ocu_Unused::StartChannel(void){
 }
