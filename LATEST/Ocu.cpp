@@ -7,7 +7,6 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.hpp"
-#include "CfgOcu.hpp"
 #include "infOcu_EcuM.hpp"
 #include "infOcu_Dcm.hpp"
 #include "infOcu_SchM.hpp"
@@ -36,37 +35,40 @@ class module_Ocu:
       public abstract_module
 {
    public:
+      module_Ocu(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
+      }
       FUNC(void, OCU_CODE) InitFunction   (void);
       FUNC(void, OCU_CODE) DeInitFunction (void);
-      FUNC(void, OCU_CODE) GetVersionInfo (void);
       FUNC(void, OCU_CODE) MainFunction   (void);
-
-   private:
-      CONST(Std_TypeVersionInfo, OCU_CONST) VersionInfo = {
-            0x0000
-         ,  0xFFFF
-         ,  0x01
-         ,  '0'
-         ,  '1'
-         ,  '0'
-      };
 };
+
+extern VAR(module_Ocu, OCU_VAR) Ocu;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
 /******************************************************************************/
+CONSTP2VAR(infEcuMClient, OCU_VAR, OCU_CONST) gptrinfEcuMClient_Ocu = &Ocu;
+CONSTP2VAR(infDcmClient,  OCU_VAR, OCU_CONST) gptrinfDcmClient_Ocu  = &Ocu;
+CONSTP2VAR(infSchMClient, OCU_VAR, OCU_CONST) gptrinfSchMClient_Ocu = &Ocu;
 
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
+#include "CfgOcu.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_Ocu, OCU_VAR) Ocu;
-CONSTP2VAR(infEcuMClient, OCU_VAR, OCU_CONST) gptrinfEcuMClient_Ocu = &Ocu;
-CONSTP2VAR(infDcmClient,  OCU_VAR, OCU_CONST) gptrinfDcmClient_Ocu  = &Ocu;
-CONSTP2VAR(infSchMClient, OCU_VAR, OCU_CONST) gptrinfSchMClient_Ocu = &Ocu;
+VAR(module_Ocu, OCU_VAR) Ocu(
+   {
+         0x0000
+      ,  0xFFFF
+      ,  0x01
+      ,  '0'
+      ,  '1'
+      ,  '0'
+   }
+);
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
@@ -77,14 +79,6 @@ FUNC(void, OCU_CODE) module_Ocu::InitFunction(void){
 
 FUNC(void, OCU_CODE) module_Ocu::DeInitFunction(void){
    Ocu.IsInitDone = E_NOT_OK;
-}
-
-FUNC(void, OCU_CODE) module_Ocu::GetVersionInfo(void){
-#if(STD_ON == Ocu_DevErrorDetect)
-//TBD: API parameter check
-   Det_ReportError(
-   );
-#endif
 }
 
 FUNC(void, OCU_CODE) module_Ocu::MainFunction(void){
