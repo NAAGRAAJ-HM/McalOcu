@@ -6,7 +6,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "module.hpp"
+#include "Module.hpp"
 #include "infOcu_EcuM.hpp"
 #include "infOcu_Dcm.hpp"
 #include "infOcu_SchM.hpp"
@@ -37,6 +37,9 @@ class module_Ocu:
    public:
       module_Ocu(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
       }
+      FUNC(void, _CODE) InitFunction(
+         CONSTP2CONST(CfgModule_TypeAbstract, _CONFIG_DATA, _APPL_CONST) lptrCfgModule
+      );
       FUNC(void, OCU_CODE) InitFunction   (void);
       FUNC(void, OCU_CODE) DeInitFunction (void);
       FUNC(void, OCU_CODE) MainFunction   (void);
@@ -73,7 +76,19 @@ VAR(module_Ocu, OCU_VAR) Ocu(
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-FUNC(void, OCU_CODE) module_Ocu::InitFunction(void){
+FUNC(void, OCU_CODE) module_Ocu::InitFunction(
+   CONSTP2CONST(CfgOcu_Type, CFGOCU_CONFIG_DATA, CFGOCU_APPL_CONST) lptrCfgOcu
+){
+   if(NULL_PTR == lptrCfgOcu){
+#if(STD_ON == Ocu_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+// check lptrCfgOcu for memory faults
+// use PBcfg_Ocu as back-up configuration
+   }
    Ocu.IsInitDone = E_OK;
 }
 
