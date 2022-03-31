@@ -37,10 +37,9 @@ class module_Ocu:
    public:
       module_Ocu(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
       }
-      FUNC(void, _CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, _CONFIG_DATA, _APPL_CONST) lptrCfgModule
+      FUNC(void, OCU_CODE) InitFunction(
+         CONSTP2CONST(CfgModule_TypeAbstract, OCU_CONFIG_DATA, OCU_APPL_CONST) lptrCfgModule
       );
-      FUNC(void, OCU_CODE) InitFunction   (void);
       FUNC(void, OCU_CODE) DeInitFunction (void);
       FUNC(void, OCU_CODE) MainFunction   (void);
 };
@@ -77,23 +76,39 @@ VAR(module_Ocu, OCU_VAR) Ocu(
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 FUNC(void, OCU_CODE) module_Ocu::InitFunction(
-   CONSTP2CONST(CfgOcu_Type, CFGOCU_CONFIG_DATA, CFGOCU_APPL_CONST) lptrCfgOcu
+   CONSTP2CONST(CfgModule_TypeAbstract, OCU_CONFIG_DATA, OCU_APPL_CONST) lptrCfgModule
 ){
-   if(NULL_PTR == lptrCfgOcu){
+   if(E_OK == IsInitDone){
 #if(STD_ON == Ocu_DevErrorDetect)
       Det_ReportError(
       );
 #endif
    }
    else{
-// check lptrCfgOcu for memory faults
+      if(NULL_PTR == lptrCfgModule){
+#if(STD_ON == Ocu_DevErrorDetect)
+         Det_ReportError(
+         );
+#endif
+      }
+      else{
+// check lptrCfgModule for memory faults
 // use PBcfg_Ocu as back-up configuration
+      }
+      IsInitDone = E_OK;
    }
-   Ocu.IsInitDone = E_OK;
 }
 
 FUNC(void, OCU_CODE) module_Ocu::DeInitFunction(void){
-   Ocu.IsInitDone = E_NOT_OK;
+   if(E_OK != IsInitDone){
+#if(STD_ON == Ocu_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+      IsInitDone = E_NOT_OK;
+   }
 }
 
 FUNC(void, OCU_CODE) module_Ocu::MainFunction(void){
