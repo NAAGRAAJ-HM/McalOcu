@@ -78,6 +78,7 @@ VAR(module_Ocu, OCU_VAR) Ocu(
 FUNC(void, OCU_CODE) module_Ocu::InitFunction(
    CONSTP2CONST(CfgModule_TypeAbstract, OCU_CONFIG_DATA, OCU_APPL_CONST) lptrCfgModule
 ){
+#if(STD_ON == Ocu_InitCheck)
    if(E_OK == IsInitDone){
 #if(STD_ON == Ocu_DevErrorDetect)
       Det_ReportError(
@@ -85,6 +86,7 @@ FUNC(void, OCU_CODE) module_Ocu::InitFunction(
 #endif
    }
    else{
+#endif
       if(NULL_PTR == lptrCfgModule){
 #if(STD_ON == Ocu_DevErrorDetect)
          Det_ReportError(
@@ -96,10 +98,13 @@ FUNC(void, OCU_CODE) module_Ocu::InitFunction(
 // use PBcfg_Ocu as back-up configuration
       }
       IsInitDone = E_OK;
+#if(STD_ON == Ocu_InitCheck)
    }
+#endif
 }
 
 FUNC(void, OCU_CODE) module_Ocu::DeInitFunction(void){
+#if(STD_ON == Ocu_InitCheck)
    if(E_OK != IsInitDone){
 #if(STD_ON == Ocu_DevErrorDetect)
       Det_ReportError(
@@ -107,11 +112,26 @@ FUNC(void, OCU_CODE) module_Ocu::DeInitFunction(void){
 #endif
    }
    else{
+#endif
       IsInitDone = E_NOT_OK;
+#if(STD_ON == Ocu_InitCheck)
    }
+#endif
 }
 
 FUNC(void, OCU_CODE) module_Ocu::MainFunction(void){
+#if(STD_ON == Ocu_InitCheck)
+   if(E_OK != IsInitDone){
+#if(STD_ON == Ocu_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+#endif
+#if(STD_ON == Ocu_InitCheck)
+   }
+#endif
 }
 
 class class_Ocu_Unused{
