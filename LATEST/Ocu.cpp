@@ -14,18 +14,18 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define OCU_AR_RELEASE_MAJOR_VERSION                                           4
-#define OCU_AR_RELEASE_MINOR_VERSION                                           3
+#define OCU_AR_RELEASE_VERSION_MAJOR                                           4
+#define OCU_AR_RELEASE_VERSION_MINOR                                           3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
-#if(OCU_AR_RELEASE_MAJOR_VERSION != STD_AR_RELEASE_MAJOR_VERSION)
-   #error "Incompatible OCU_AR_RELEASE_MAJOR_VERSION!"
+#if(OCU_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
+   #error "Incompatible OCU_AR_RELEASE_VERSION_MAJOR!"
 #endif
 
-#if(OCU_AR_RELEASE_MINOR_VERSION != STD_AR_RELEASE_MINOR_VERSION)
-   #error "Incompatible OCU_AR_RELEASE_MINOR_VERSION!"
+#if(OCU_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
+   #error "Incompatible OCU_AR_RELEASE_VERSION_MINOR!"
 #endif
 
 /******************************************************************************/
@@ -63,8 +63,10 @@ CONSTP2VAR(infSchMClient, OCU_VAR, OCU_CONST) gptrinfSchMClient_Ocu = &Ocu;
 /******************************************************************************/
 VAR(module_Ocu, OCU_VAR) Ocu(
    {
-         0x0000
-      ,  0xFFFF
+         OCU_AR_RELEASE_VERSION_MAJOR
+      ,  OCU_AR_RELEASE_VERSION_MINOR
+      ,  0x00
+      ,  0xFF
       ,  0x01
       ,  '0'
       ,  '1'
