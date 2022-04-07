@@ -101,8 +101,8 @@ FUNC(void, OCU_CODE) module_Ocu::InitFunction(
             lptrCfg = lptrCfgModule;
          }
          else{
-// use PBcfg_CanIf as back-up configuration
-            lptrCfg = PBcfg_CanIf;
+// use PBcfgCanIf as back-up configuration
+            lptrCfg = &PBcfgOcu;
          }
       }
       IsInitDone = E_OK;
