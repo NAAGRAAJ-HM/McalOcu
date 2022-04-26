@@ -31,8 +31,22 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
+class class_Ocu_Functionality{
+   public:
+      FUNC(void, OCU_CODE) StartChannel         (void);
+      FUNC(void, OCU_CODE) StopChannel          (void);
+      FUNC(void, OCU_CODE) SetPinState          (void);
+      FUNC(void, OCU_CODE) SetPinAction         (void);
+      FUNC(void, OCU_CODE) GetCounter           (void);
+      FUNC(void, OCU_CODE) SetAbsoluteThreshold (void);
+      FUNC(void, OCU_CODE) SetRelativeThreshold (void);
+      FUNC(void, OCU_CODE) DisableNotification  (void);
+      FUNC(void, OCU_CODE) EnableNotification   (void);
+};
+
 class module_Ocu:
       public abstract_module
+   ,  public class_Ocu_Functionality
 {
    public:
       module_Ocu(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
@@ -84,6 +98,10 @@ FUNC(void, OCU_CODE) module_Ocu::InitFunction(
    if(E_OK == IsInitDone){
 #if(STD_ON == Ocu_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -92,6 +110,10 @@ FUNC(void, OCU_CODE) module_Ocu::InitFunction(
       if(NULL_PTR == lptrCfgModule){
 #if(STD_ON == Ocu_DevErrorDetect)
          Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
          );
 #endif
       }
@@ -116,6 +138,10 @@ FUNC(void, OCU_CODE) module_Ocu::DeInitFunction(void){
    if(E_OK != IsInitDone){
 #if(STD_ON == Ocu_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -132,6 +158,10 @@ FUNC(void, OCU_CODE) module_Ocu::MainFunction(void){
    if(E_OK != IsInitDone){
 #if(STD_ON == Ocu_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -142,44 +172,31 @@ FUNC(void, OCU_CODE) module_Ocu::MainFunction(void){
 #endif
 }
 
-class class_Ocu_Unused{
-   public:
-      FUNC(void, OCU_CODE) StartChannel         (void);
-      FUNC(void, OCU_CODE) StopChannel          (void);
-      FUNC(void, OCU_CODE) SetPinState          (void);
-      FUNC(void, OCU_CODE) SetPinAction         (void);
-      FUNC(void, OCU_CODE) GetCounter           (void);
-      FUNC(void, OCU_CODE) SetAbsoluteThreshold (void);
-      FUNC(void, OCU_CODE) SetRelativeThreshold (void);
-      FUNC(void, OCU_CODE) DisableNotification  (void);
-      FUNC(void, OCU_CODE) EnableNotification   (void);
-};
-
-FUNC(void, OCU_CODE) class_Ocu_Unused::StartChannel(void){
+FUNC(void, OCU_CODE) class_Ocu_Functionality::StartChannel(void){
 }
 
-FUNC(void, OCU_CODE) class_Ocu_Unused::StopChannel(void){
+FUNC(void, OCU_CODE) class_Ocu_Functionality::StopChannel(void){
 }
 
-FUNC(void, OCU_CODE) class_Ocu_Unused::SetPinState(void){
+FUNC(void, OCU_CODE) class_Ocu_Functionality::SetPinState(void){
 }
 
-FUNC(void, OCU_CODE) class_Ocu_Unused::SetPinAction(void){
+FUNC(void, OCU_CODE) class_Ocu_Functionality::SetPinAction(void){
 }
 
-FUNC(void, OCU_CODE) class_Ocu_Unused::GetCounter(void){
+FUNC(void, OCU_CODE) class_Ocu_Functionality::GetCounter(void){
 }
 
-FUNC(void, OCU_CODE) class_Ocu_Unused::SetAbsoluteThreshold(void){
+FUNC(void, OCU_CODE) class_Ocu_Functionality::SetAbsoluteThreshold(void){
 }
 
-FUNC(void, OCU_CODE) class_Ocu_Unused::SetRelativeThreshold(void){
+FUNC(void, OCU_CODE) class_Ocu_Functionality::SetRelativeThreshold(void){
 }
 
-FUNC(void, OCU_CODE) class_Ocu_Unused::DisableNotification(void){
+FUNC(void, OCU_CODE) class_Ocu_Functionality::DisableNotification(void){
 }
 
-FUNC(void, OCU_CODE) class_Ocu_Unused::EnableNotification(void){
+FUNC(void, OCU_CODE) class_Ocu_Functionality::EnableNotification(void){
 }
 
 /******************************************************************************/
