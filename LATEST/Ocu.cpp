@@ -31,19 +31,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class class_Ocu_Functionality{
-   public:
-      FUNC(void, OCU_CODE) StartChannel         (void);
-      FUNC(void, OCU_CODE) StopChannel          (void);
-      FUNC(void, OCU_CODE) SetPinState          (void);
-      FUNC(void, OCU_CODE) SetPinAction         (void);
-      FUNC(void, OCU_CODE) GetCounter           (void);
-      FUNC(void, OCU_CODE) SetAbsoluteThreshold (void);
-      FUNC(void, OCU_CODE) SetRelativeThreshold (void);
-      FUNC(void, OCU_CODE) DisableNotification  (void);
-      FUNC(void, OCU_CODE) EnableNotification   (void);
-};
-
 class module_Ocu:
       public abstract_module
    ,  public class_Ocu_Functionality
