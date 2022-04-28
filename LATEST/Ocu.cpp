@@ -7,6 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
+#include "Ocu_core.hpp"
 #include "infOcu_EcuM.hpp"
 #include "infOcu_Dcm.hpp"
 #include "infOcu_SchM.hpp"

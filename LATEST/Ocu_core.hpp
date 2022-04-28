@@ -7,10 +7,32 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
+#include "CompilerCfg_Ocu.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
+#define OCU_COREFUNCTIONALITIES                                                \
+              FUNC(void, OCU_CODE) StartChannel         (void);                \
+              FUNC(void, OCU_CODE) StopChannel          (void);                \
+              FUNC(void, OCU_CODE) SetPinState          (void);                \
+              FUNC(void, OCU_CODE) SetPinAction         (void);                \
+              FUNC(void, OCU_CODE) GetCounter           (void);                \
+              FUNC(void, OCU_CODE) SetAbsoluteThreshold (void);                \
+              FUNC(void, OCU_CODE) SetRelativeThreshold (void);                \
+              FUNC(void, OCU_CODE) DisableNotification  (void);                \
+              FUNC(void, OCU_CODE) EnableNotification   (void);                \
+
+#define OCU_COREFUNCTIONALITIES_VIRTUAL                                        \
+      virtual FUNC(void, OCU_CODE) StartChannel         (void) = 0;            \
+      virtual FUNC(void, OCU_CODE) StopChannel          (void) = 0;            \
+      virtual FUNC(void, OCU_CODE) SetPinState          (void) = 0;            \
+      virtual FUNC(void, OCU_CODE) SetPinAction         (void) = 0;            \
+      virtual FUNC(void, OCU_CODE) GetCounter           (void) = 0;            \
+      virtual FUNC(void, OCU_CODE) SetAbsoluteThreshold (void) = 0;            \
+      virtual FUNC(void, OCU_CODE) SetRelativeThreshold (void) = 0;            \
+      virtual FUNC(void, OCU_CODE) DisableNotification  (void) = 0;            \
+      virtual FUNC(void, OCU_CODE) EnableNotification   (void) = 0;            \
 
 /******************************************************************************/
 /* MACROS                                                                     */
@@ -21,15 +43,7 @@
 /******************************************************************************/
 class class_Ocu_Functionality{
    public:
-      FUNC(void, OCU_CODE) StartChannel         (void);
-      FUNC(void, OCU_CODE) StopChannel          (void);
-      FUNC(void, OCU_CODE) SetPinState          (void);
-      FUNC(void, OCU_CODE) SetPinAction         (void);
-      FUNC(void, OCU_CODE) GetCounter           (void);
-      FUNC(void, OCU_CODE) SetAbsoluteThreshold (void);
-      FUNC(void, OCU_CODE) SetRelativeThreshold (void);
-      FUNC(void, OCU_CODE) DisableNotification  (void);
-      FUNC(void, OCU_CODE) EnableNotification   (void);
+      OCU_COREFUNCTIONALITIES_VIRTUAL
 };
 
 /******************************************************************************/
