@@ -7,10 +7,9 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
+#include "CfgOcu.hpp"
 #include "Ocu_core.hpp"
-#include "infOcu_EcuM.hpp"
-#include "infOcu_Dcm.hpp"
-#include "infOcu_SchM.hpp"
+#include "infOcu.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -44,6 +43,7 @@ class module_Ocu:
       );
       FUNC(void, OCU_CODE) DeInitFunction (void);
       FUNC(void, OCU_CODE) MainFunction   (void);
+      OCU_CORE_FUNCTIONALITIES
 };
 
 extern VAR(module_Ocu, OCU_VAR) Ocu;
@@ -58,7 +58,6 @@ CONSTP2VAR(infSchMClient, OCU_VAR, OCU_CONST) gptrinfSchMClient_Ocu = &Ocu;
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
-#include "CfgOcu.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */
