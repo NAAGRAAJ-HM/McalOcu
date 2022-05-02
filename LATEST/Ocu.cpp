@@ -159,31 +159,31 @@ FUNC(void, OCU_CODE) module_Ocu::MainFunction(void){
 #endif
 }
 
-FUNC(void, OCU_CODE) class_Ocu_Functionality::StartChannel(void){
+FUNC(void, OCU_CODE) module_Ocu::StartChannel(void){
 }
 
-FUNC(void, OCU_CODE) class_Ocu_Functionality::StopChannel(void){
+FUNC(void, OCU_CODE) module_Ocu::StopChannel(void){
 }
 
-FUNC(void, OCU_CODE) class_Ocu_Functionality::SetPinState(void){
+FUNC(void, OCU_CODE) module_Ocu::SetPinState(void){
 }
 
-FUNC(void, OCU_CODE) class_Ocu_Functionality::SetPinAction(void){
+FUNC(void, OCU_CODE) module_Ocu::SetPinAction(void){
 }
 
-FUNC(void, OCU_CODE) class_Ocu_Functionality::GetCounter(void){
+FUNC(void, OCU_CODE) module_Ocu::GetCounter(void){
 }
 
-FUNC(void, OCU_CODE) class_Ocu_Functionality::SetAbsoluteThreshold(void){
+FUNC(void, OCU_CODE) module_Ocu::SetAbsoluteThreshold(void){
 }
 
-FUNC(void, OCU_CODE) class_Ocu_Functionality::SetRelativeThreshold(void){
+FUNC(void, OCU_CODE) module_Ocu::SetRelativeThreshold(void){
 }
 
-FUNC(void, OCU_CODE) class_Ocu_Functionality::DisableNotification(void){
+FUNC(void, OCU_CODE) module_Ocu::DisableNotification(void){
 }
 
-FUNC(void, OCU_CODE) class_Ocu_Functionality::EnableNotification(void){
+FUNC(void, OCU_CODE) module_Ocu::EnableNotification(void){
 }
 
 /******************************************************************************/
