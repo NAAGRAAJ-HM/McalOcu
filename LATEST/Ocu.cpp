@@ -113,7 +113,7 @@ FUNC(void, OCU_CODE) module_Ocu::InitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  OCU_E_UNINIT
       );
 #endif
    }
@@ -133,7 +133,7 @@ FUNC(void, OCU_CODE) module_Ocu::DeInitFunction(void){
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  OCU_E_UNINIT
       );
 #endif
    }
@@ -152,7 +152,7 @@ FUNC(void, OCU_CODE) module_Ocu::MainFunction(void){
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  OCU_E_UNINIT
       );
 #endif
    }
