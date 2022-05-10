@@ -89,7 +89,10 @@ FUNC(void, OCU_CODE) module_Ocu::InitFunction(
    CONSTP2CONST(CfgModule_TypeAbstract, OCU_CONFIG_DATA, OCU_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == Ocu_InitCheck)
-   if(E_OK != IsInitDone){
+   if(
+         E_OK
+      != IsInitDone
+   ){
 #endif
       if(NULL_PTR != lptrCfgModule){
          if(STD_HIGH){
@@ -127,7 +130,10 @@ FUNC(void, OCU_CODE) module_Ocu::InitFunction(
 
 FUNC(void, OCU_CODE) module_Ocu::DeInitFunction(void){
 #if(STD_ON == Ocu_InitCheck)
-   if(E_OK == IsInitDone){
+   if(
+         E_OK
+      == IsInitDone
+   ){
 #endif
 #if(STD_ON == Ocu_InitCheck)
       IsInitDone = E_NOT_OK;
@@ -147,7 +153,10 @@ FUNC(void, OCU_CODE) module_Ocu::DeInitFunction(void){
 
 FUNC(void, OCU_CODE) module_Ocu::MainFunction(void){
 #if(STD_ON == Ocu_InitCheck)
-   if(E_OK == IsInitDone){
+   if(
+         E_OK
+      == IsInitDone
+   ){
 #endif
 #if(STD_ON == Ocu_InitCheck)
    }
