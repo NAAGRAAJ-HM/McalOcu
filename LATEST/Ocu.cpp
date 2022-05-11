@@ -9,7 +9,7 @@
 #include "Module.hpp"
 #include "CfgOcu.hpp"
 #include "Ocu_core.hpp"
-#include "infOcu.hpp"
+#include "infOcu_Exp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -32,6 +32,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_Ocu:
+   INTERFACES_EXPORTED_OCU
       public abstract_module
    ,  public class_Ocu_Functionality
 {
