@@ -32,7 +32,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_Ocu:
-   INTERFACES_EXPORTED_OCU
+      INTERFACES_EXPORTED_OCU
       public abstract_module
    ,  public class_Ocu_Functionality
 {
