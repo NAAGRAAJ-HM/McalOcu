@@ -72,6 +72,10 @@ CONSTP2VAR(infSchMClient, OCU_VAR, OCU_CONST) gptrinfSchMClient_Ocu = &Ocu;
 /******************************************************************************/
 VAR(module_Ocu, OCU_VAR) Ocu(
    {
+#if(STD_ON == _ReSIM)
+// char strModuleName[6];
+#else
+#endif
          OCU_AR_RELEASE_VERSION_MAJOR
       ,  OCU_AR_RELEASE_VERSION_MINOR
       ,  0x00
