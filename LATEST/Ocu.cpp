@@ -130,7 +130,9 @@ FUNC(void, OCU_CODE) module_Ocu::InitFunction(
 #endif
 }
 
-FUNC(void, OCU_CODE) module_Ocu::DeInitFunction(void){
+FUNC(void, OCU_CODE) module_Ocu::DeInitFunction(
+   void
+){
 #if(STD_ON == Ocu_InitCheck)
    if(
          E_OK
@@ -153,7 +155,9 @@ FUNC(void, OCU_CODE) module_Ocu::DeInitFunction(void){
 #endif
 }
 
-FUNC(void, OCU_CODE) module_Ocu::MainFunction(void){
+FUNC(void, OCU_CODE) module_Ocu::MainFunction(
+   void
+){
 #if(STD_ON == Ocu_InitCheck)
    if(
          E_OK
@@ -175,31 +179,49 @@ FUNC(void, OCU_CODE) module_Ocu::MainFunction(void){
 #endif
 }
 
-FUNC(void, OCU_CODE) module_Ocu::StartChannel(void){
+FUNC(void, OCU_CODE) module_Ocu::StartChannel(
+   void
+){
 }
 
-FUNC(void, OCU_CODE) module_Ocu::StopChannel(void){
+FUNC(void, OCU_CODE) module_Ocu::StopChannel(
+   void
+){
 }
 
-FUNC(void, OCU_CODE) module_Ocu::SetPinState(void){
+FUNC(void, OCU_CODE) module_Ocu::SetPinState(
+   void
+){
 }
 
-FUNC(void, OCU_CODE) module_Ocu::SetPinAction(void){
+FUNC(void, OCU_CODE) module_Ocu::SetPinAction(
+   void
+){
 }
 
-FUNC(void, OCU_CODE) module_Ocu::GetCounter(void){
+FUNC(void, OCU_CODE) module_Ocu::GetCounter(
+   void
+){
 }
 
-FUNC(void, OCU_CODE) module_Ocu::SetAbsoluteThreshold(void){
+FUNC(void, OCU_CODE) module_Ocu::SetAbsoluteThreshold(
+   void
+){
 }
 
-FUNC(void, OCU_CODE) module_Ocu::SetRelativeThreshold(void){
+FUNC(void, OCU_CODE) module_Ocu::SetRelativeThreshold(
+   void
+){
 }
 
-FUNC(void, OCU_CODE) module_Ocu::DisableNotification(void){
+FUNC(void, OCU_CODE) module_Ocu::DisableNotification(
+   void
+){
 }
 
-FUNC(void, OCU_CODE) module_Ocu::EnableNotification(void){
+FUNC(void, OCU_CODE) module_Ocu::EnableNotification(
+   void
+){
 }
 
 /******************************************************************************/
