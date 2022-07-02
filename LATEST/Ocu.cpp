@@ -82,12 +82,7 @@ FUNC(void, OCU_CODE) module_Ocu::InitFunction(
    ){
 #endif
       if(NULL_PTR != lptrCfgModule){
-         if(STD_HIGH){
-            lptrCfg = lptrCfgModule;
-         }
-         else{
-            lptrCfg = &PBcfgOcu;
-         }
+         lptrCfg = lptrCfgModule;
       }
       else{
 #if(STD_ON == Ocu_DevErrorDetect)
