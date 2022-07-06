@@ -7,9 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
-#include "CfgOcu.hpp"
-#include "Ocu_core.hpp"
-#include "infOcu_Exp.hpp"
+#include "Ocu.hpp"
 #include "infOcu_Imp.hpp"
 
 /******************************************************************************/
@@ -32,26 +30,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class module_Ocu:
-      INTERFACES_EXPORTED_OCU
-      public abstract_module
-   ,  public class_Ocu_Functionality
-{
-   private:
-/******************************************************************************/
-/* OBJECTS                                                                    */
-/******************************************************************************/
-
-   public:
-      FUNC(void, OCU_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, OCU_CONFIG_DATA, OCU_APPL_CONST) lptrCfgModule
-      );
-      FUNC(void, OCU_CODE) DeInitFunction (void);
-      FUNC(void, OCU_CODE) MainFunction   (void);
-      OCU_CORE_FUNCTIONALITIES
-};
-
-extern VAR(module_Ocu, OCU_VAR) Ocu;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
