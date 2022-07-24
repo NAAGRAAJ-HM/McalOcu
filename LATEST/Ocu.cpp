@@ -48,7 +48,8 @@ VAR(module_Ocu, OCU_VAR) Ocu;
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 FUNC(void, OCU_CODE) module_Ocu::InitFunction(
-   CONSTP2CONST(CfgModule_TypeAbstract, OCU_CONFIG_DATA, OCU_APPL_CONST) lptrCfgModule
+      CONSTP2CONST(ConstModule_TypeAbstract, OCU_CONST,       OCU_APPL_CONST) lptrConstModule
+   ,  CONSTP2CONST(CfgModule_TypeAbstract,   OCU_CONFIG_DATA, OCU_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == Ocu_InitCheck)
    if(
@@ -56,8 +57,12 @@ FUNC(void, OCU_CODE) module_Ocu::InitFunction(
       != IsInitDone
    ){
 #endif
-      if(NULL_PTR != lptrCfgModule){
-         lptrCfg = lptrCfgModule;
+      if(
+            (NULL_PTR != lptrConstModule)
+         && (NULL_PTR != lptrCfgModule)
+      ){
+         lptrConst = lptrConstModule;
+         lptrCfg   = lptrCfgModule;
       }
       else{
 #if(STD_ON == Ocu_DevErrorDetect)

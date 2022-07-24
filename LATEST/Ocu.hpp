@@ -7,6 +7,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
+#include "ConstOcu.hpp"
 #include "CfgOcu.hpp"
 #include "Ocu_core.hpp"
 #include "infOcu_Exp.hpp"
@@ -31,13 +32,15 @@ class module_Ocu:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
+      const ConstOcu_Type* lptrConst = (ConstOcu_Type*)NULL_PTR;
 
    public:
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
       FUNC(void, OCU_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, OCU_CONFIG_DATA, OCU_APPL_CONST) lptrCfgModule
+            CONSTP2CONST(ConstModule_TypeAbstract, OCU_CONST,       OCU_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   OCU_CONFIG_DATA, OCU_APPL_CONST) lptrCfgModule
       );
       FUNC(void, OCU_CODE) DeInitFunction (void);
       FUNC(void, OCU_CODE) MainFunction   (void);
