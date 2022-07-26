@@ -61,7 +61,7 @@ FUNC(void, OCU_CODE) module_Ocu::InitFunction(
             (NULL_PTR != lptrConstModule)
          && (NULL_PTR != lptrCfgModule)
       ){
-         lptrConst = lptrConstModule;
+         lptrConst = (const ConstOcu_Type*)lptrConstModule;
          lptrCfg   = lptrCfgModule;
       }
       else{
