@@ -24,7 +24,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_McalOcu:
-      INTERFACES_EXPORTED_OCU
+      INTERFACES_EXPORTED_MCALOCU
       public abstract_module
    ,  public class_McalOcu_Functionality
 {
@@ -38,13 +38,13 @@ class module_McalOcu:
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-      FUNC(void, OCU_CODE) InitFunction(
-            CONSTP2CONST(ConstModule_TypeAbstract, OCU_CONST,       OCU_APPL_CONST) lptrConstModule
-         ,  CONSTP2CONST(CfgModule_TypeAbstract,   OCU_CONFIG_DATA, OCU_APPL_CONST) lptrCfgModule
+      FUNC(void, MCALOCU_CODE) InitFunction(
+            CONSTP2CONST(ConstModule_TypeAbstract, MCALOCU_CONST,       MCALOCU_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   MCALOCU_CONFIG_DATA, MCALOCU_APPL_CONST) lptrCfgModule
       );
-      FUNC(void, OCU_CODE) DeInitFunction (void);
-      FUNC(void, OCU_CODE) MainFunction   (void);
-      OCU_CORE_FUNCTIONALITIES
+      FUNC(void, MCALOCU_CODE) DeInitFunction (void);
+      FUNC(void, MCALOCU_CODE) MainFunction   (void);
+      MCALOCU_CORE_FUNCTIONALITIES
 };
 
 /******************************************************************************/
@@ -58,7 +58,7 @@ class module_McalOcu:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-extern VAR(module_McalOcu, OCU_VAR) McalOcu;
+extern VAR(module_McalOcu, MCALOCU_VAR) McalOcu;
 
 /******************************************************************************/
 /* EOF                                                                        */

@@ -12,27 +12,27 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define OCU_CORE_FUNCTIONALITIES                                               \
-              FUNC(void, OCU_CODE) StartChannel         (void);                \
-              FUNC(void, OCU_CODE) StopChannel          (void);                \
-              FUNC(void, OCU_CODE) SetPinState          (void);                \
-              FUNC(void, OCU_CODE) SetPinAction         (void);                \
-              FUNC(void, OCU_CODE) GetCounter           (void);                \
-              FUNC(void, OCU_CODE) SetAbsoluteThreshold (void);                \
-              FUNC(void, OCU_CODE) SetRelativeThreshold (void);                \
-              FUNC(void, OCU_CODE) DisableNotification  (void);                \
-              FUNC(void, OCU_CODE) EnableNotification   (void);                \
+#define MCALOCU_CORE_FUNCTIONALITIES                                               \
+              FUNC(void, MCALOCU_CODE) StartChannel         (void);                \
+              FUNC(void, MCALOCU_CODE) StopChannel          (void);                \
+              FUNC(void, MCALOCU_CODE) SetPinState          (void);                \
+              FUNC(void, MCALOCU_CODE) SetPinAction         (void);                \
+              FUNC(void, MCALOCU_CODE) GetCounter           (void);                \
+              FUNC(void, MCALOCU_CODE) SetAbsoluteThreshold (void);                \
+              FUNC(void, MCALOCU_CODE) SetRelativeThreshold (void);                \
+              FUNC(void, MCALOCU_CODE) DisableNotification  (void);                \
+              FUNC(void, MCALOCU_CODE) EnableNotification   (void);                \
 
-#define OCU_CORE_FUNCTIONALITIES_VIRTUAL                                       \
-      virtual FUNC(void, OCU_CODE) StartChannel         (void) = 0;            \
-      virtual FUNC(void, OCU_CODE) StopChannel          (void) = 0;            \
-      virtual FUNC(void, OCU_CODE) SetPinState          (void) = 0;            \
-      virtual FUNC(void, OCU_CODE) SetPinAction         (void) = 0;            \
-      virtual FUNC(void, OCU_CODE) GetCounter           (void) = 0;            \
-      virtual FUNC(void, OCU_CODE) SetAbsoluteThreshold (void) = 0;            \
-      virtual FUNC(void, OCU_CODE) SetRelativeThreshold (void) = 0;            \
-      virtual FUNC(void, OCU_CODE) DisableNotification  (void) = 0;            \
-      virtual FUNC(void, OCU_CODE) EnableNotification   (void) = 0;            \
+#define MCALOCU_CORE_FUNCTIONALITIES_VIRTUAL                                       \
+      virtual FUNC(void, MCALOCU_CODE) StartChannel         (void) = 0;            \
+      virtual FUNC(void, MCALOCU_CODE) StopChannel          (void) = 0;            \
+      virtual FUNC(void, MCALOCU_CODE) SetPinState          (void) = 0;            \
+      virtual FUNC(void, MCALOCU_CODE) SetPinAction         (void) = 0;            \
+      virtual FUNC(void, MCALOCU_CODE) GetCounter           (void) = 0;            \
+      virtual FUNC(void, MCALOCU_CODE) SetAbsoluteThreshold (void) = 0;            \
+      virtual FUNC(void, MCALOCU_CODE) SetRelativeThreshold (void) = 0;            \
+      virtual FUNC(void, MCALOCU_CODE) DisableNotification  (void) = 0;            \
+      virtual FUNC(void, MCALOCU_CODE) EnableNotification   (void) = 0;            \
 
 /******************************************************************************/
 /* MACROS                                                                     */
@@ -43,7 +43,7 @@
 /******************************************************************************/
 class class_McalOcu_Functionality{
    public:
-      OCU_CORE_FUNCTIONALITIES_VIRTUAL
+      MCALOCU_CORE_FUNCTIONALITIES_VIRTUAL
 };
 
 /******************************************************************************/

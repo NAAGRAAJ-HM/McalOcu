@@ -13,18 +13,18 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define OCU_AR_RELEASE_VERSION_MAJOR                                           4
-#define OCU_AR_RELEASE_VERSION_MINOR                                           3
+#define MCALOCU_AR_RELEASE_VERSION_MAJOR                                           4
+#define MCALOCU_AR_RELEASE_VERSION_MINOR                                           3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
-#if(OCU_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
-   #error "Incompatible OCU_AR_RELEASE_VERSION_MAJOR!"
+#if(MCALOCU_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
+   #error "Incompatible MCALOCU_AR_RELEASE_VERSION_MAJOR!"
 #endif
 
-#if(OCU_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
-   #error "Incompatible OCU_AR_RELEASE_VERSION_MINOR!"
+#if(MCALOCU_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
+   #error "Incompatible MCALOCU_AR_RELEASE_VERSION_MINOR!"
 #endif
 
 /******************************************************************************/
@@ -42,14 +42,14 @@
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_McalOcu, OCU_VAR) McalOcu;
+VAR(module_McalOcu, MCALOCU_VAR) McalOcu;
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-FUNC(void, OCU_CODE) module_McalOcu::InitFunction(
-      CONSTP2CONST(ConstModule_TypeAbstract, OCU_CONST,       OCU_APPL_CONST) lptrConstModule
-   ,  CONSTP2CONST(CfgModule_TypeAbstract,   OCU_CONFIG_DATA, OCU_APPL_CONST) lptrCfgModule
+FUNC(void, MCALOCU_CODE) module_McalOcu::InitFunction(
+      CONSTP2CONST(ConstModule_TypeAbstract, MCALOCU_CONST,       MCALOCU_APPL_CONST) lptrConstModule
+   ,  CONSTP2CONST(CfgModule_TypeAbstract,   MCALOCU_CONFIG_DATA, MCALOCU_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == McalOcu_InitCheck)
    if(
@@ -83,14 +83,14 @@ FUNC(void, OCU_CODE) module_McalOcu::InitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  OCU_E_UNINIT
+         ,  MCALOCU_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, OCU_CODE) module_McalOcu::DeInitFunction(
+FUNC(void, MCALOCU_CODE) module_McalOcu::DeInitFunction(
    void
 ){
 #if(STD_ON == McalOcu_InitCheck)
@@ -108,14 +108,14 @@ FUNC(void, OCU_CODE) module_McalOcu::DeInitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  OCU_E_UNINIT
+         ,  MCALOCU_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, OCU_CODE) module_McalOcu::MainFunction(
+FUNC(void, MCALOCU_CODE) module_McalOcu::MainFunction(
    void
 ){
 #if(STD_ON == McalOcu_InitCheck)
@@ -132,54 +132,54 @@ FUNC(void, OCU_CODE) module_McalOcu::MainFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  OCU_E_UNINIT
+         ,  MCALOCU_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, OCU_CODE) module_McalOcu::StartChannel(
+FUNC(void, MCALOCU_CODE) module_McalOcu::StartChannel(
    void
 ){
 }
 
-FUNC(void, OCU_CODE) module_McalOcu::StopChannel(
+FUNC(void, MCALOCU_CODE) module_McalOcu::StopChannel(
    void
 ){
 }
 
-FUNC(void, OCU_CODE) module_McalOcu::SetPinState(
+FUNC(void, MCALOCU_CODE) module_McalOcu::SetPinState(
    void
 ){
 }
 
-FUNC(void, OCU_CODE) module_McalOcu::SetPinAction(
+FUNC(void, MCALOCU_CODE) module_McalOcu::SetPinAction(
    void
 ){
 }
 
-FUNC(void, OCU_CODE) module_McalOcu::GetCounter(
+FUNC(void, MCALOCU_CODE) module_McalOcu::GetCounter(
    void
 ){
 }
 
-FUNC(void, OCU_CODE) module_McalOcu::SetAbsoluteThreshold(
+FUNC(void, MCALOCU_CODE) module_McalOcu::SetAbsoluteThreshold(
    void
 ){
 }
 
-FUNC(void, OCU_CODE) module_McalOcu::SetRelativeThreshold(
+FUNC(void, MCALOCU_CODE) module_McalOcu::SetRelativeThreshold(
    void
 ){
 }
 
-FUNC(void, OCU_CODE) module_McalOcu::DisableNotification(
+FUNC(void, MCALOCU_CODE) module_McalOcu::DisableNotification(
    void
 ){
 }
 
-FUNC(void, OCU_CODE) module_McalOcu::EnableNotification(
+FUNC(void, MCALOCU_CODE) module_McalOcu::EnableNotification(
    void
 ){
 }

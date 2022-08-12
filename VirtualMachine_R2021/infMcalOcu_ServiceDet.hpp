@@ -1,16 +1,13 @@
 #pragma once
 /******************************************************************************/
-/* File   : McalOcu.hpp                                                           */
+/* File   : infMcalOcu_ServiceDet.hpp                                                    */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "ConstMcalOcu.hpp"
-#include "CfgMcalOcu.hpp"
-#include "McalOcu_core.hpp"
-#include "infMcalOcu_Exp.hpp"
+#include "CompilerCfg_McalOcu.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -23,29 +20,9 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class module_McalOcu:
-      INTERFACES_EXMCALPORTED_MCALOCU
-      public abstract_module
-   ,  public class_McalOcu_Functionality
-{
-   private:
-/******************************************************************************/
-/* OBJECTS                                                                    */
-/******************************************************************************/
-      const ConstMcalOcu_Type* lptrConst = (ConstMcalOcu_Type*)NULL_PTR;
-
-   public:
-/******************************************************************************/
-/* FUNCTIONS                                                                  */
-/******************************************************************************/
-      FUNC(void, MCALOCU_CODE) InitFunction(
-            CONSTP2CONST(ConstModule_TypeAbstract, MCALOCU_CONST,       MCALOCU_APPL_CONST) lptrConstModule
-         ,  CONSTP2CONST(CfgModule_TypeAbstract,   MCALOCU_CONFIG_DATA, MCALOCU_APPL_CONST) lptrCfgModule
-      );
-      FUNC(void, MCALOCU_CODE) DeInitFunction (void);
-      FUNC(void, MCALOCU_CODE) MainFunction   (void);
-      MCALOCU_CORE_FUNCTIONALITIES
-};
+typedef enum{
+      OCU_E_UNINIT
+}McalOcu_TypeServiceDetErrorCode;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
@@ -58,7 +35,10 @@ class module_McalOcu:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-extern VAR(module_McalOcu, MCALOCU_VAR) McalOcu;
+
+/******************************************************************************/
+/* FUNCTIONS                                                                  */
+/******************************************************************************/
 
 /******************************************************************************/
 /* EOF                                                                        */
