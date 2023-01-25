@@ -1,13 +1,13 @@
 #pragma once
 /******************************************************************************/
-/* File   : McalOcu.hpp                                                           */
+/* File   : McalOcu.hpp                                                       */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "ConstMcalOcu.hpp"
+#include "infMcalOcu_ServiceNvM_Types.hpp"
 #include "CfgMcalOcu.hpp"
 #include "McalOcu_core.hpp"
 #include "infMcalOcu_Exp.hpp"
